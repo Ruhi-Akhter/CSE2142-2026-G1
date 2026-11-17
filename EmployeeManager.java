@@ -133,7 +133,11 @@ public class EmployeeManager {
             }
             System.out.println("Data Deleted.");
         }
-    }
+        else {
+    System.out.println("Invalid argument supplied!");
+    System.out.println("Usage: java EmployeeManager [-l | -c | +name | ?name | -u name | -d name]");
+        }}
+    
     private static String readEmployeeFile(){
         BufferedReader read =new new BufferedReader(new InputStreamReader(
           new FileInputStream(Constants.FILE_NAME)));
