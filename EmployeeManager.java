@@ -2,7 +2,11 @@
 //File Name EmployeeManager.java
 import java.io.*;
 import java.util.*;
-
+ 
+/**
+ * EmployeeManager application handles basic CRUD operations 
+ * and management tasks for employee records stored in a text file.
+ */
 public class EmployeeManager {
     public static void main(String[] args) {
         // Check arguments
@@ -10,6 +14,7 @@ public class EmployeeManager {
             System.out.println("Error: Please provide exactly one argument.");
             return ;
         }
+        // Displays all employee records
         if (args[0].equals("l")) {
             System.out.println("Loading data ...");
             try {
@@ -24,7 +29,9 @@ public class EmployeeManager {
             } catch (Exception e) {
             }
             System.out.println("Data Loaded.");
-        } else if (args[0].equals("s")) {
+        }
+        // Selects and displays a random employee
+         else if (args[0].equals("s")) {
             System.out.println("Loading data ...");
             try {
                 BufferedReader read = new BufferedReader(
@@ -39,7 +46,9 @@ public class EmployeeManager {
             } catch (Exception employees) {
             }
             System.out.println("Data Loaded.");
-        } else if (args[0].contains("+")) {
+        }
+        // Adds a new employee to the record
+        else if (args[0].contains("+")) {
             System.out.println("Loading data ...");
             try {
                 BufferedWriter write = new BufferedWriter(
@@ -50,7 +59,9 @@ public class EmployeeManager {
             } catch (Exception employees) {
             }
             System.out.println("Data Loaded.");
-        } else if (args[0].contains("?")) {
+        } 
+        // Searches for a specific employee
+        else if (args[0].contains("?")) {
             System.out.println("Loading data ...");
             try {
                 BufferedReader read = new BufferedReader(
@@ -74,7 +85,9 @@ public class EmployeeManager {
             }
             System.out.println("Data Loaded.");
         
-        } else if (args[0].contains("u")) {
+        }
+        // Updates an existing employee record
+        else if (args[0].contains("u")) {
             System.out.println("Loading data ...");
             try {
                 BufferedReader read = new BufferedReader(
@@ -95,7 +108,9 @@ public class EmployeeManager {
             } catch (Exception employees) {
             }
             System.out.println("Data Updated.");
-            } else if (args[0].contains(Constants.FLAG_COUNT)) { 
+            } 
+            // Counts total number of employees
+            else if (args[0].contains(Constants.FLAG_COUNT)) { 
             System.out.println("Loading data ...");
             try {
                 BufferedReader read = new BufferedReader(
