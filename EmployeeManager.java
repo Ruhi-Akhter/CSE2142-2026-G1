@@ -60,12 +60,16 @@ public class EmployeeManager {
                 String employees[] = line.split(",");
                 boolean found = false;
                 String s = args[0].substring(1);
-                for (int i = 0; i < e.length && !found; i++) {
-                    if (employees[i].equals(s)) {
+                for (String emp : employees) {
+                    if (emp.trim().equals(s.trim())) {
                         System.out.println("Employee found!");
                         found = true;
+                        break;
                     }
                 }
+            }
+            if(! found) {
+                System.out.println("Employees not found.");
             } catch (Exception employees) {
             }
             System.out.println("Data Loaded.");
