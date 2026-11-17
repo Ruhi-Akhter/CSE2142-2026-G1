@@ -15,7 +15,7 @@ public class EmployeeManager {
             try {
                 BufferedReader read = new BufferedReader(
                         new InputStreamReader(
-                                new FileInputStream("employees.txt")));
+                                new FileInputStream(Constants.FILE_NAME)));
                 String line = read.readLine();
                 String employees[] = line.split(",");
                 for (String emp : employees) {
@@ -29,9 +29,9 @@ public class EmployeeManager {
             try {
                 BufferedReader read = new BufferedReader(
                         new InputStreamReader(
-                                new FileInputStream("employees.txt")));
-                String line = read.readLine();
-                System.out.println(line);
+                                new FileInputStream(Constants.FILE_NAME)));
+
+                System.out.println(read.readline());
                 String employees[] = line.split(",");
                 Random rand = new Random();
                 int idx = rand.nextInt(employees.length);
@@ -43,7 +43,7 @@ public class EmployeeManager {
             System.out.println("Loading data ...");
             try {
                 BufferedWriter write = new BufferedWriter(
-                        new FileWriter("employees.txt", true));
+                        new FileWriter(Constants.FILE_NAME, true));
                 String n = args[0].substring(1);
                 w.write(", " + n);
                 w.close();
@@ -55,7 +55,7 @@ public class EmployeeManager {
             try {
                 BufferedReader read = new BufferedReader(
                         new InputStreamReader(
-                                new FileInputStream("employees.txt")));
+                                new FileInputStream(Constants.FILE_NAME)));
                 String line = read.readLine();
                 String employees[] = line.split(",");
                 boolean found = false;
@@ -74,7 +74,7 @@ public class EmployeeManager {
             try {
                 BufferedReader read = new BufferedReader(
                         new InputStreamReader(
-                                new FileInputStream("employees.txt")));
+                                new FileInputStream(Constants.FILE_NAME)));
                 String line = read.readLine();
                 char[] chars = line.toCharArray();
                 boolean inWord = false;
@@ -98,7 +98,7 @@ public class EmployeeManager {
             try {
                 BufferedReader read = new BufferedReader(
                         new InputStreamReader(
-                                new FileInputStream("employees.txt")));
+                                new FileInputStream(Constants.FILE_NAME)));
                 String line = read.readLine();
                 String employees[] = line.split(",");
                 String n = args[0].substring(1);
@@ -108,7 +108,7 @@ public class EmployeeManager {
                     }
                 }
                 BufferedWriter write = new BufferedWriter(
-                        new FileWriter("employees.txt"));
+                        new FileWriter(Constants.FILE_NAME));
                 write.write(String.join(",", employees));
                 write.close();
             } catch (Exception employees) {
@@ -119,14 +119,14 @@ public class EmployeeManager {
             try {
                 BufferedReader read = new BufferedReader(
                         new InputStreamReader(
-                                new FileInputStream("employees.txt")));
+                                new FileInputStream(Constants.FILE_NAME)));
                 String line = read.readLine();
                 String employees[] = line.split(",");
                 String n = args[0].substring(1);
                 List<String> list = new ArrayList<>(Arrays.asList(e));
                 list.remove(n);
                 BufferedWriter write = new BufferedWriter(
-                        new FileWriter("employees.txt"));
+                        new FileWriter(Constants.FILE_NAME));
                 write.write(String.join(",", list));
                 write.close();
             } catch (Exception e) {
@@ -136,12 +136,12 @@ public class EmployeeManager {
     }
     private static String readEmployeeFile(){
         BufferedReader read =new new BufferedReader(new InputStreamReader(
-          new FileInputStream("employees.txt")));
+          new FileInputStream(Constants.FILE_NAME)));
           return read.readLine;
     }
 
     private static void writeEmployeeFile(String content) throws Exception{
-        BufferedWriter write=new BufferedWriter(new FileWritter("employees.txt"));
+        BufferedWriter write=new BufferedWriter(new FileWritter(Constants.FILE_NAME));
         write.write(content);
         write.close();
     }
