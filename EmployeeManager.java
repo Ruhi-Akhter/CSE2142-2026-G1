@@ -134,4 +134,15 @@ public class EmployeeManager {
             System.out.println("Data Deleted.");
         }
     }
+    private static String readEmployeeFile(){
+        BufferedReader read =new new BufferedReader(new InputStreamReader(
+          new FileInputStream("employees.txt")));
+          return read.readLine;
+    }
+
+    private static void writeEmployeeFile(String content) throws Exception{
+        BufferedWriter write=new BufferedWriter(new FileWritter("employees.txt"));
+        write.write(content);
+        write.close();
+    }
 }
