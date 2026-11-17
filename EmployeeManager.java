@@ -73,30 +73,7 @@ public class EmployeeManager {
             } catch (Exception employees) {
             }
             System.out.println("Data Loaded.");
-        } else if (args[0].contains("c")) {
-            System.out.println("Loading data ...");
-            try {
-                BufferedReader read = new BufferedReader(
-                        new InputStreamReader(
-                                new FileInputStream(Constants.FILE_NAME)));
-                String line = read.readLine();
-                char[] chars = line.toCharArray();
-                boolean inWord = false;
-                int count = 0;
-                for (char c : chars) {
-                    if (c == ' ') {
-                        if (!inWord) {
-                            count++;
-                            inWord = true;
-                        } else {
-                            inWord = false;
-                        }
-                    }
-                }
-                System.out.println(count + " word(s) found " + chars.length);
-            } catch (Exception employees) {
-            }
-            System.out.println("Data Loaded.");
+        
         } else if (args[0].contains("u")) {
             System.out.println("Loading data ...");
             try {
@@ -118,7 +95,26 @@ public class EmployeeManager {
             } catch (Exception employees) {
             }
             System.out.println("Data Updated.");
-        } else if (args[0].contains("d")) {
+            } else if (args[0].contains(Constants.FLAG_COUNT)) { 
+            System.out.println("Loading data ...");
+            try {
+                BufferedReader read = new BufferedReader(
+                        new InputStreamReader(
+                                new FileInputStream(Constants.FILE_NAME)));
+                String line = read.readLine();
+                
+                
+                if (line != null && !line.trim().isEmpty()) {
+                    String[] employees = line.split(",");
+                    System.out.println(employees.length + " word(s) found"); 
+                } else {
+                    System.out.println("0 word(s) found");
+                }
+            } catch (Exception e) {
+            }
+            System.out.println("Data Loaded.");
+        }
+        else if (args[0].contains("d")) {
             System.out.println("Loading data ...");
             try {
                 BufferedReader read = new BufferedReader(
