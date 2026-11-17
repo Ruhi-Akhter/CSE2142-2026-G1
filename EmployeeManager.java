@@ -6,6 +6,10 @@ import java.util.*;
 public class EmployeeManager {
     public static void main(String[] args) {
         // Check arguments
+        if(args == null || args.length !=1){
+            System.out.println("Error: Please provide exactly one argument.");
+            return ;
+        }
         if (args[0].equals("l")) {
             System.out.println("Loading data ...");
             try {
